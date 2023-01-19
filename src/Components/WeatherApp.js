@@ -1,4 +1,5 @@
 import React, {useEffect,useState,useRef} from 'react'
+import axios from 'axios';
 import './WeatherApp.css'
 
 function WeatherApp() {
@@ -14,10 +15,9 @@ function WeatherApp() {
     useEffect(() => {
         const fetchApi = async() =>
         {
-            const url =`http://api.openweathermap.org/data/2.5/weather?q=${idFromButton}&units=metric&appid=${'4ebb9418ca605fa1931880e565ec065c'}`;
-            const response = await fetch(url);
-            const resJson = await response.json();
-            setCity(resJson.main);
+           axios.get(`http://api.openweathermap.org/data/2.5/weather?q=${idFromButton}&units=metric&appid=4ebb9418ca605fa1931880e565ec065c`).then(res=>{
+                setCity(res.data.main)
+            })
         }
         fetchApi();
     },[idFromButton])
