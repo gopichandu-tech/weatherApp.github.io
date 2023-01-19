@@ -15,7 +15,7 @@ function WeatherApp() {
     useEffect(() => {
         const fetchApi = async() =>
         {
-           axios.get(`http://api.openweathermap.org/data/2.5/weather?q=${idFromButton}&units=metric&appid=4ebb9418ca605fa1931880e565ec065c`).then(res=>{
+           axios.get(`https://api.openweathermap.org/data/2.5/weather?q=${idFromButton}&units=metric&appid=4ebb9418ca605fa1931880e565ec065c`).then(res=>{
                 setCity(res.data.main)
             })
         }
@@ -24,9 +24,7 @@ function WeatherApp() {
 
     const handleClick = () => {
         setIdFromButton(search)
-        setUpdated(inputRef.current.value);
-        
-        
+        setUpdated(inputRef.current.value);        
     }
     
   return (
