@@ -30,7 +30,9 @@ function WeatherApp() {
     
   return (
     <div>
+        <div className='heading'>Temperature In Your City</div>
         <div className='Container'>
+            
             <div className='sub_Container'>
                 <div className='input_Container'><input ref={inputRef} type="search" id="input"  placeholder='city name'  onChange={e=> setSearch(e.target.value)}/> </div>
                 <div className='button_Container'><button id="button" onClick={handleClick}>Search</button></div>
