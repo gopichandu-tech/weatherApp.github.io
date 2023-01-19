@@ -37,7 +37,7 @@ function WeatherApp() {
                 <div className='input_Container'><input ref={inputRef} type="search" id="input"  placeholder='city name'  onChange={e=> setSearch(e.target.value)}/> </div>
                 <div className='button_Container'><button id="button" onClick={handleClick}>Search</button></div>
                 {!city ?  
-                (<div className='nodata_sub_Container'><h3><b>No Data Found</b></h3></div>) 
+                (<div className='nodata_sub_Container'><h3><b>City Not Found</b></h3></div>) 
                 : (<div className='temp_display_sub_Container'>
                     <div className='display_city'>{updated}</div>
                     <div className='display_temp'>{city.temp} °C</div>
